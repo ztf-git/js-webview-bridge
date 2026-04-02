@@ -1,0 +1,73 @@
+{
+  "name": "js-webview-bridge",
+  "version": "1.0.1",
+  "type": "module",
+  "license": "MIT",
+  "author": "ztf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztf-git/js-webview-bridge"
+  },
+  "keywords": [
+    "js-webview-bridge",
+    "rxjs",
+    "native",
+    "webview",
+    "android",
+    "ios",
+    "jsbridge",
+    "javascript",
+    "typescript"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/es/core.js",
+  "module": "dist/lib/core.js",
+  "types": "dist/core.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/es/core.js",
+      "require": "./dist/lib/core.js"
+    },
+    "./rx": {
+      "types": "./dist/rx.d.ts",
+      "import": "./dist/es/rx.js",
+      "require": "./dist/lib/rx.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "format": "prettier --write . && eslint . --fix",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "rxjs": "^7.8.2"
+  },
+  "peerDependenciesMeta": {
+    "rxjs": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^24.10.1",
+    "dts": "^0.1.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "from": "^0.1.7",
+    "globals": "^16.5.0",
+    "import": "^0.0.6",
+    "jiti": "^2.6.1",
+    "prettier": "^3.7.4",
+    "rxjs": "^7.8.2",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.50.0",
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
