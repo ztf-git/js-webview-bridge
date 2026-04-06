@@ -1,18 +1,4 @@
-import type { RegisterOptions, CallOptions, CallInterceptor, CallIbacknterceptor } from '../types/core'
-export interface Bridge {
-  init: (handler: (message: unknown, responseCallback: (response: unknown) => void) => void) => void
-
-  callHandler: <T = unknown, R = unknown>(
-    handlerName: string,
-    data?: T,
-    responseCallback?: (response: R) => void
-  ) => void
-
-  registerHandler: <T = unknown, R = unknown>(
-    handlerName: string,
-    handler: (data: T, responseCallback: (response: R) => void) => void
-  ) => void
-}
+import type { Bridge, RegisterOptions, CallOptions, CallInterceptor, CallbackInterceptor } from '../types/core'
 type SetupBridgeCallback = (bridge: Bridge) => void
 declare global {
   interface Window {
@@ -23,7 +9,7 @@ declare global {
 
 class JSBridge {
   protected _callInterceptor?: CallInterceptor
-  protected _callbackInterceptor?: CallIbacknterceptor
+  protected _callbackInterceptor?: CallbackInterceptor
   public constructor() {}
   // 获取平台
   static getPlatform(): 'android' | 'ios' | 'unknown' {
@@ -79,8 +65,8 @@ class JSBridge {
     return this
   }
   // call的回调拦截器
-  useCallbackInterceptor<R = unknown>(interceptor: CallIbacknterceptor<R>) {
-    this._callbackInterceptor = interceptor as CallIbacknterceptor<unknown>
+  useCallbackInterceptor<R = unknown>(interceptor: CallbackInterceptor<R>) {
+    this._callbackInterceptor = interceptor as CallbackInterceptor<unknown>
     return this
   }
   /** JS 调用 Native */

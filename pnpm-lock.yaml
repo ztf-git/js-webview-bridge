@@ -118,57 +118,6 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@24.12.0)(rollup@4.60.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
 
-  packages/web-js-bridge:
-    devDependencies:
-      '@eslint/js':
-        specifier: ^9.39.2
-        version: 9.39.4
-      '@types/node':
-        specifier: ^24.10.1
-        version: 24.12.0
-      dts:
-        specifier: ^0.1.1
-        version: 0.1.1
-      eslint:
-        specifier: ^9.39.2
-        version: 9.39.4(jiti@2.6.1)
-      eslint-config-prettier:
-        specifier: ^10.1.8
-        version: 10.1.8(eslint@9.39.4(jiti@2.6.1))
-      eslint-plugin-prettier:
-        specifier: ^5.5.4
-        version: 5.5.5(eslint-config-prettier@10.1.8(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1))(prettier@3.8.1)
-      from:
-        specifier: ^0.1.7
-        version: 0.1.7
-      globals:
-        specifier: ^16.5.0
-        version: 16.5.0
-      import:
-        specifier: ^0.0.6
-        version: 0.0.6
-      jiti:
-        specifier: ^2.6.1
-        version: 2.6.1
-      prettier:
-        specifier: ^3.7.4
-        version: 3.8.1
-      rxjs:
-        specifier: ^7.8.2
-        version: 7.8.2
-      typescript:
-        specifier: ~5.9.3
-        version: 5.9.3
-      typescript-eslint:
-        specifier: ^8.50.0
-        version: 8.57.2(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
-      vite:
-        specifier: ^7.2.4
-        version: 7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)
-      vite-plugin-dts:
-        specifier: ^4.5.4
-        version: 4.5.4(@types/node@24.12.0)(rollup@4.60.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
-
 packages:
 
   '@antfu/install-pkg@1.1.0':
