@@ -45,12 +45,12 @@ const handleAndroid = () => {
   //   console.log('==handleAndroid==error', error)
   // })
   jsBridge
-    .call({
+    .call<string>({
       handlerName: TEST_ANDROID,
       data: { name: "test" },
-    }).then((res: unknown) => {
+    }).then((res: string) => {
       console.log("====res", res);
-      message.value = res as string;
+      message.value = res;
     })
     .catch((error) => {
       console.log("==handleAndroid==error", error.message);

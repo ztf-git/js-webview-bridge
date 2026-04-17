@@ -24,7 +24,7 @@ import { rxJsBridge, type BridgeEvent } from "@/native/rx-js-bridge";
 import { Subscription } from "rxjs";
 const h5State = ref(1);
 const message = ref("");
-const sub_enevt = shallowRef<null | Subscription >(null)
+const sub_event = shallowRef<null | Subscription >(null)
 const setH5State = () => {
   if (h5State.value > 10) {
     h5State.value = 0;
@@ -37,9 +37,9 @@ const setH5State = () => {
 };
 const handleAndroid = () => {
     console.log('====handleAndroid')
-    rxJsBridge.rxCall(TEST_ANDROID, {name: 'test'}).subscribe((res:unknown) => {
+    rxJsBridge.rxCall<{name: string},string>(TEST_ANDROID, {name: 'test'}).subscribe((res:string) => {
         console.log('====res', res)
-        message.value = res as string
+        message.value = res
     })
 };
 // 发送事件
@@ -53,7 +53,7 @@ const sendEvent = () => {
 }
 onMounted(() => {
   // 当作enevt事件使用
-  sub_enevt.value = rxJsBridge.on(BRIDGE_EVENT).subscribe(({ params }) => {
+  sub_event.value = rxJsBridge.on(BRIDGE_EVENT).subscribe(({ params }) => {
     console.log("收到原生发送的事件，参数", params);
     sendEvent()
   });
@@ -62,6 +62,6 @@ onMounted(() => {
   });
 });
 onUnmounted(() => {
-  sub_enevt.value?.unsubscribe();
+  sub_event.value?.unsubscribe();
 });
 </script>
