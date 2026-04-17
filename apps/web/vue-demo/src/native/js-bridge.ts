@@ -4,7 +4,6 @@ import type { CallOptions } from "js-webview-bridge";
 
 const jsBridge = new JsBridge()
 jsBridge.setupJsBridge(bridge => {
-  console.log('init', bridge)
   bridge.init((message, responseCallback) => {
     console.log('JS got a message', message)
     responseCallback('JS init response')
